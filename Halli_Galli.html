@@ -1,0 +1,82 @@
+<DOCTYPE html>
+    <html>
+     <head>
+         <style>
+             canvas {
+                 background-image: url("img/background.gif");
+                 background-size: contain;
+             }
+             #explanation {
+                 position: absolute;
+                 width: 800px;
+                 height: 600px;
+                 top: 10px;
+                 left: 10px;
+                 z-index: 1;
+                 visibility: hidden;
+             }
+             #explanation_btn {
+                 position: absolute;
+                 top: 340px;
+                 left: 150px;
+             }
+             #play_btn {
+                 position: absolute;
+                 top: 340px;
+                 left: 500px;
+             }
+             #play_btn2 {
+                 position: absolute;
+                 top: 370px;
+                 left: 590px;
+                 z-index: 2;
+                 display: none;
+             }
+             #back {
+                 position: absolute;
+                 top: 20px;
+                 left: 20px;
+                 z-index: 2;
+                 display: none;
+             }
+         </style>
+     </head>
+     <body>
+        <audio src="bgm/main.mp3" autoplay loop></audio>
+        <canvas id="canvas" width="800px" height="600px" style="border : 2px solid black"></canvas>
+        <img id="explanation" src="img/explanation.gif">
+        <img id="play_btn2" src="img/Start.png" onmouseover="this.src='img/change_start.png'; stick_sound()"
+         onmouseout="this.src='img/Start.png'" onclick="location.href='play.html'">
+        <img id="explanation_btn" src="img/HowTo.png" onmouseover="this.src='img/change_howto.png'; stick_sound()"
+         onmouseout="this.src='img/HowTo.png'">
+        <img id="play_btn" src="img/Start.png" onmouseover="this.src='img/change_start.png'; stick_sound()"
+         onmouseout="this.src='img/Start.png'" onclick="location.href='play.html'">
+        <img id="back" src="img/arrow.png" width="70px" onclick="back_main()">
+     </body>
+     <script>
+        canvas = document.getElementById("canvas");
+        explanation = document.getElementById("explanation");
+        play_btn = document.getElementById("play_btn2");
+        back = document.getElementById("back");
+
+        document.getElementById("explanation_btn").onclick = chgBackground;
+
+        function stick_sound() {
+            var audio = new Audio("bgm/stick.mp3");
+            audio.play();
+        }
+        function chgBackground() {
+            explanation.style.visibility = "visible";
+            play_btn.style.display = "block";
+            back.style.display = "block";
+        }
+        function stop() { 
+            audio.pause();
+        } 
+        function back_main() {
+            explanation.style.visibility = "hidden";
+            play_btn.style.display = "none";
+            back.style.display = "none";
+        }
+     </script>
+    </html>

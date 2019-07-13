@@ -1,0 +1,147 @@
+<head>
+    <style>
+        canvas {
+            background-image: url("img/level1_bg.gif");
+            background-size: contain;
+        }
+        img {
+            position: absolute;
+        }
+        #pcp_su {
+            top: 180px;
+            left: 82px;
+        }
+        #me_su {
+            top: 460px;
+            left: 660px;
+        }
+        #bell {
+            top: 248px;
+            left: 340px;
+        }
+        #stop_start {
+            top: 30px;
+            left: 436px;
+        }
+        #restart_btn {
+            top: 30px;
+            left: 620px;
+        }
+        #pcp_card {
+            top: 113px;
+            left: 220px;
+        }
+        #me_card {
+            top: 393px;
+            left: 460px;
+        }
+        #win {
+            top: 200px;
+            left: 260px;
+            z-index: 1;
+            visibility: hidden;
+        }
+        #lose {
+            top: 200px;
+            left: 260px;
+            z-index: 1;
+            visibility: hidden;
+        }
+        #next {
+            top: 311px;
+            left: 290px;
+            z-index: 2;
+            display: none;
+        }
+        #home {
+            top: 366px;
+            left: 290px;
+            z-index: 2;
+            display: none;
+        }
+        #end_bg {
+            top: 10px;
+            left: 10px;
+            z-index: 3;
+            visibility: hidden;
+        }
+        .strawberry {
+            top: 10px;
+            z-index: 5;
+            visibility: hidden;
+        }
+        .banana {
+            top: 10px;
+            z-index: 5;
+            visibility: hidden;
+        }
+        .plum {
+            top: 10px;
+            z-index: 5;
+            visibility: hidden;
+        }
+        .lime {
+            top: 10px;
+            z-index: 5;
+            visibility: hidden;
+        }
+        #restart {
+            top: 370px;
+            left: 350px;
+            z-index: 4;
+            display: none;
+        }
+        #go_home {
+            top: 370px;
+            left: 580px;
+            z-index: 4;
+            display: none;
+        }
+        #me_ring {
+            top: 90px;
+            left: 250px;
+            visibility: hidden;
+        }
+        #pcp_ring {
+            top: 90px;
+            left: 250px;
+            visibility: hidden;
+        }
+        #not_five {
+            top: 90px;
+            left: 250px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600" style="border : 2px solid black"></canvas>
+    <img id="pcp_su" src="img/print/20.png" width="80" height="70">
+    <img id="me_su" src="img/print/20.png" width="80" height="70">
+    <img id="bell" src="img/bell.png" width="150" onclick="me_check()" onmousedown="audio_ring()">
+    <img id="stop_start" src="img/stop_btn.png" width="160" onclick="stop_start()">
+    <img id="restart_btn" src="img/restart_btn.png" width="160" onclick="goingHome()">
+    <img id="pcp_card" src="img/card/pcp_start.gif" width="142px">
+    <img id="me_card" src="img/card/me_start.gif" width="142px" onclick="getCard()">
+    <img id="win" src="img/win.png" width="300px">
+    <img id="lose" src="img/lose.png" width="300px">
+    <img id="next" src="img/next_btn.png" width="240px" onclick="level_plus()">
+    <img id="home" src="img/home_btn.png" width="240px" onclick="goingHome()">
+    <img id="end_bg" src="img/end_bg.gif" width="800px" height="600px">
+    <img class="strawberry" id="s1" style="left: 380px" src="img/strawberry.png" width="50px">
+    <img class="strawberry" id="s2" style="left: 40px;" src="img/strawberry.png" width="50px">
+    <img class="banana" id="b1"style="left: 270px;" src="img/banana.png" width="50px">
+    <img class="banana" id="b2" style="left: 700px;" src="img/banana.png" width="50px">
+    <img class="plum" id="p1" style="left: 130px;" src="img/plum.png" width="50px">
+    <img class="plum" id="p2" style="left: 580px;" src="img/plum.png" width="50px">
+    <img class="lime" id="l1" style="left: 460px;" src="img/lime.png" height="50px">
+    <img class="lime" id="l2" style="left: 200px;" src="img/lime.png" height="50px">
+    <img id="restart" src="img/restart.png" width="180px" onmouseover="this.src='img/change_restart.png'; stick_sound()"
+    onmouseout="this.src='img/restart.png'" onclick="restart()">
+    <img id="go_home" src="img/home.png" width="180px" onmouseover="this.src='img/change_home.png'; stick_sound()"
+    onmouseout="this.src='img/home.png'" onclick="location.href='Halli_Galli.html'">
+    <img id="me_ring" src="img/me_ring.png" width="300px">
+    <img id="pcp_ring" src="img/pcp_ring.png" width="300px">
+    <img id="not_five" src="img/not_five.png" width="300px">
+</body>
+<script src="play.js"></script>
